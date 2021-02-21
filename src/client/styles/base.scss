@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: rgb(240, 210, 240);
 }
 
 main {
@@ -9,6 +10,6 @@ main {
 }
 
 section {
-    max-width: 800px;
+    max-width: 400px;
     margin: 50px auto;
 }
