@@ -4,10 +4,10 @@ function handleSubmit(e) {
     let formText = document.getElementById('name').value
     Client.urlValidation(formText)
 
-
     console.log("::: Form Submitted :::")
+    console.log(formText)
 
-    fetch('http://localhost:8081/test', {
+    fetch(`http://localhost:8081/api?input=${formText}`, {
             method: "POST",
             credentials: 'same-origin',
             headers: {
@@ -38,3 +38,4 @@ export { handleSubmit }
         const update = updateUI(data)
         return data;
 */
+//fetch(`http://localhost:3000/api?input=${newsText}`);
