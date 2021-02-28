@@ -1,4 +1,4 @@
-import { formText } from '../client/js/urlValidaton'
+import { urlValidation } from '../client/js/urlValidation'
 
 describe("Testing if proper url was entered", () => {
     const urlTest = "http://www.randompassages.com/";
@@ -6,9 +6,9 @@ describe("Testing if proper url was entered", () => {
 
 
     test("TRUE", () => {
-        const resultTrue = validURL(urlTest);
+        const resultTrue = urlValidation(urlTest);
         expect(resultTrue).toBe(true);
-        const resultFalse = validURL(falseInput);
+        const resultFalse = urlValidation(falseInput);
         expect(resultFalse).toBe(false);
     });
 });
