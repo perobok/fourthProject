@@ -8,9 +8,11 @@ function urlValidation(formText) {
         '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
         '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locater
     if ((!rules.test(formText))) {
-        alert("Please enter valid url!!!")
+        console.log("Please enter valid url!!!");
+        return false;
     } else {
-        console.log("All good URL")
+        console.log("All good URL");
+        return true;
     }
 
 }
