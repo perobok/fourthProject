@@ -5,6 +5,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors')
 const mockAPIResponse = require('./mockAPI.js')
+const fetch = require("node-fetch");
 
 
 console.log(`Your API key is ${process.env.API_KEY}`);
@@ -13,17 +14,19 @@ const app = express();
 app.use(cors())
 app.use(express.static('dist'))
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 console.log(__dirname)
 
 
-app.post("/", async function(req, res) {
+app.post("/api", async function(req, res) {
     console.log("--------request_successiful---------")
-    console.log(req.url.search)
+    console.log(req.body.url)
     const app_key = process.env.API_KEY
-    const apiUrl = `https://api.meaningcloud.com/sentiment-2.1?key=${app_key}&url=${req.url.search}&lang=en`
+    const apiUrl = `https://api.meaningcloud.com/sentiment-2.1?key=${app_key}&url=${req.body.url}&lang=en`
     let response = await fetch(apiUrl)
     let data = await response.json()
+
 
     const evaluation = {}
     evaluation.confidence = data.confidence

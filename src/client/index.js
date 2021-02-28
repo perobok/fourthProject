@@ -12,8 +12,4 @@ export {
     handleSubmit
 }
 
-
-console.log(urlValidation);
-
-alert("I EXIST")
 console.log("CHANGE!!");
