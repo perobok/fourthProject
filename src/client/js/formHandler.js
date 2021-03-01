@@ -17,7 +17,7 @@ function handleSubmit(e) {
         '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locater
 
     if ((!rules.test(formText))) {
-        console.log("It is not an URL!!!")
+        alert("Please enter valid url!!!");
     } else {
         fetch(`http://localhost:8081/api`, {
                 method: "POST",
