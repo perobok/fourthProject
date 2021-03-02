@@ -3,6 +3,8 @@ const texts = {
 }
 
 const fetch = require("node-fetch");
+const require = require("regenerator-runtime/runtime");
+
 
 async function handleSubmit() {
 
