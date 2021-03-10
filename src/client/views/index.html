@@ -3,48 +3,75 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Test</title>
-
+    <title>Travel app</title>
 </head>
 
 <body>
-
-    <header>
-        <div class="">
-            Logo
+    <div class="container">
+        <div class="header">
+            <div class="textHeader">
+                <h1>Discover Your Next Destination</h1>
+            </div>
         </div>
-        <div class="">
-            navigation
-        </div>
-    </header>
-
-    <main>
-        <section>
-            <form class="" onsubmit="return handleSubmit(event)">
-                <input id="name" type="text" name="input" value="" placeholder="Enter text">
-                <input type="submit" class="button" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+        <div class="inputForm">
+            <form>
+                <label for="feelings">Enter your destination:</label>
+                <input type="text" id="destination" name="destination">
+                <input type="date" name="date" id="date1" value="2021-03-15">
+                <button id="generate" type="submit"> Search </button>
             </form>
-        </section>
+        </div>
+        <div class="mainContent">
+            <div class="mainCard">
 
-        <section>
-            <strong>Form Results:</strong>
-            <div id="results1"></div>
-            <div id="results2"></div>
-            <div id="results3"></div>
-        </section>
-    </main>
+                <div class="mainCardPhoto">Here comes photo</div>
+                <div class="flexPosition">
+                    <div class="mainCardText">
+                        <h1>Country</h1>
+                        Your trip is in 5 days</div>
+                    <div class="mainCardTemp">17 stepeni</div>
+                    <div class="mainCardSave">SAVE TRIP</div>
+                </div>
 
-    <footer>
-        <p>This is a footer</p>
-    </footer>
+            </div>
+            <div class="allCards">
+                <div class="card card1">
+                    <div class="cardPhoto"></div>
+                    <div class="cardText"></div>
+                    <div class="cardTemp"></div>
+                    <div class="cardRemove"></div>
+
+                </div>
+                <div class="card card2">
+                    <div class="cardPhoto"></div>
+                    <div class="cardText"></div>
+                    <div class="cardTemp"></div>
+                    <div class="cardRemove"></div>
+
+                </div>
+                <div class="card card3">
+                    <div class="cardPhoto"></div>
+                    <div class="cardText"></div>
+                    <div class="cardTemp"></div>
+                    <div class="cardRemove"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footerText">
+                Travel App&#169;</div>
+        </div>
+    </div>
+
     <script>
-        // Check that service workers are supported
-        if ('serviceWorker' in navigator) {
-            // Use the window load event to keep the page load performant
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js');
-            });
-        }
+        /*  // Check that service workers are supported
+                                                                                        if ('serviceWorker' in navigator) {
+                                                                                            // Use the window load event to keep the page load performant
+                                                                                            window.addEventListener('load', () => {
+                                                                                                navigator.serviceWorker.register('/service-worker.js');
+                                                                                            });
+                                                                                        }*/
     </script>
 </body>
 

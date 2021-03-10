@@ -1,0 +1,148 @@
+.container {
+    height: auto;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2%;
+    background-color: whitesmoke;
+    overflow: hidden;
+}
+
+.header {
+    height: 180px;
+    border-radius: 2%;
+    background-color: rgb(30, 30, 143);
+    color: white;
+    text-align: center;
+    z-index: 500;
+}
+
+.textHeader {
+    padding-top: 40px;
+}
+
+.inputForm {
+    margin-top: -45px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0px 0px 15px rgb(78, 78, 78);
+}
+
+#date {
+    margin-left: 40px;
+}
+
+#generate {
+    margin-left: 30px;
+}
+
+.mainContent {
+    width: 80%;
+    height: auto;
+    min-height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: whitesmoke;
+}
+
+.mainCard {
+    height: 320px;
+    background-color: white;
+    box-shadow: 0px 0px 15px rgb(78, 78, 78);
+    transition: ease-out 0.2s;
+    display: flex;
+    flex-direction: horizontal;
+}
+
+.mainCard:hover {
+    box-shadow: 0px 0px 20px rgb(53, 53, 53);
+}
+
+.mainCardPhoto {
+    border: 1px solid green;
+    width: 60%;
+    text-align: center;
+    padding-top: 145px;
+}
+
+.flexPosition {
+    display: block;
+    width: 40%;
+    margin: 5px;
+    text-align: center;
+}
+
+.mainCardText {
+    border: 1px solid rgb(34, 0, 128);
+    padding: 0px;
+    height: 35%;
+    margin-bottom: 5px;
+}
+
+.mainCardTemp {
+    border: 1px solid rgb(182, 38, 2);
+    height: 47%;
+    margin-bottom: 5px;
+}
+
+.mainCardSave {
+    border: 1px solid rgb(128, 126, 0);
+    height: 9%;
+    padding-top: 13px;
+}
+
+.allCards {
+    display: flex;
+    flex-direction: horizontal;
+}
+
+.card {
+    box-shadow: 0px 0px 15px rgb(78, 78, 78);
+    height: 400px;
+    width: 30%;
+    margin-top: 30px;
+    margin-left: 2%;
+    margin-right: 2%;
+    visibility: hidden;
+}
+
+.cardPhoto {
+    height: 30%;
+    border: 1px solid rgb(34, 0, 128);
+}
+
+.cardText {
+    height: 15%;
+    border: 1px solid rgb(0, 128, 85);
+}
+
+.cardTemp {
+    height: 40%;
+    border: 1px solid rgb(128, 9, 0);
+}
+
+.cardRemove {
+    height: 15%;
+    border: 1px solid rgb(128, 0, 122);
+}
+
+.footer {
+    background-color: rgb(30, 30, 143);
+    color: whitesmoke;
+    height: 80px;
+    z-index: 200;
+    overflow: hidden;
+}
+
+.footerText {
+    text-align: center;
+    margin-top: 30px;
+}
