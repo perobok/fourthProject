@@ -7,8 +7,10 @@ const cors = require('cors')
 const mockAPIResponse = require('./mockAPI.js')
 const fetch = require("node-fetch");
 
+const API_USERNAME_GEODATA = process.env.API_USERNAME_GEODATA
+const API_KEY_PIXABAY = process.env.API_KEY_PIXABAY
+const API_KEY_WEATHER = process.env.API_KEY_WEATHER
 
-console.log(`Your API key is ${process.env.API_KEY}`);
 const app = express();
 
 app.use(cors())
@@ -18,22 +20,31 @@ app.use(bodyParser.json());
 
 console.log(__dirname)
 
+projectData = {};
+const data = [];
 
-app.post("/api", async function(req, res) {
-    console.log("--------request_successiful---------")
-    console.log(req.body.url)
-    const app_key = process.env.API_KEY
-    const apiUrl = `https://api.meaningcloud.com/sentiment-2.1?key=${app_key}&url=${req.body.url}&lang=en`
-    let response = await fetch(apiUrl)
-    let data = await response.json()
+//GET   giving the keys to frontend
+app.get('/keys', function(req, res) {
+    res.send({
+        API_KEY_WEATHER: API_KEY_WEATHER,
+        API_USERNAME_GEODATA: API_USERNAME_GEODATA,
+        API_KEY_PIXABAY: API_KEY_PIXABAY,
+    });
+});
 
 
-    const evaluation = {}
-    evaluation.confidence = data.confidence
-    evaluation.subjectivity = data.subjectivity
-    evaluation.irony = data.irony
-    res.send(evaluation)
+app.post("/apiWeather", async function(req, res) {
+    console.log("--------request_to_weatherApi_successiful---------")
+    console.log(req.body.lng, req.body.lat);
+    const apiWeatherURL = 'https://api.weatherbit.io/v2.0/forecast/daily';
+    const apiWeatherKey = process.env.API_KEY_WEATHER;
+    const apiUrlWeather = `${apiWeatherURL}?lat=${req.body.lat}&lon=${req.body.lng}&key=${apiWeatherKey}`
+    let responseWeather = await fetch(apiUrlWeather)
+    let dataWeather = await responseWeather.json()
+    console.log(dataWeather)
+    res.send(dataWeather)
 })
+
 
 app.get('/', function(req, res) {
     res.sendFile('dist/index.html')
@@ -41,10 +52,21 @@ app.get('/', function(req, res) {
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(8081, function() {
-    console.log('Example app listening on port 8081!')
+app.listen(8083, function() {
+    console.log('Example app listening on port 8083!')
 })
 
 app.get('/api', function(req, res) {
     res.send(mockAPIResponse)
 })
+
+// ROUTES FOR PUTTING DATA IN OBJECT IN SERVER
+
+//POST
+app.post('/projectData', (req, res) => {
+    projectData = req.body;
+    data.push(projectData);
+    console.log(projectData);
+    console.log("I've got the request");
+    res.send("message:Post received");
+});

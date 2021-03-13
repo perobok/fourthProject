@@ -1,13 +1,14 @@
+# Capstone Travel app
 
+## Overview
+In this project I builded travel application. This app will be dynamic and should be created on customers demand. User should enter destination and date when he wants to go. Based on that data app will fetch three different APIs to add information on the page. First api will translate place location to geografical coordinates. Then With this data, app will fetch two different APIs to receive weather forcast and picture od place. 
 
-In this project I created simple page that receives an url in form and after click on submit button fetch backend which then pass new request to an external MeaningCloud API. After that information about language processing is received and rendered to the html page. 
+## Detail explanation
+Becide geoCooridnates I took information about country. I renedered it to the screen and also made condition if there is no picture of entered place app will return image of country. This was also required as extra sujestions from udacity.com. 
 
+Weather data has condition as well. This API returns array of 17 days. If date of trip exceedes this value than we should return string that we are unable to predict wetaher thet far. 
 
-I used node express for local server on port 8081. I configured webpack module bundler. Both modes, production and development, are available and buildable as well. 
-I used scss for my styling and css minimiser to. 
-At the end I produced jest testing to test functionality. 
-Service workers are present as well. 
-
-I had some problems with runing production mode while some of vesions wasn't wright inside package.json file. After couple days I figure out how to solve these issues. 
+## Instructions
+To solve issue with CORS i append cors-anywhere url which sometimes ask to unlock demo version. 
 
 Pero Bokic

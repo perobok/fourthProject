@@ -6,6 +6,7 @@
     border-radius: 2%;
     background-color: whitesmoke;
     overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .header {
@@ -15,6 +16,7 @@
     color: white;
     text-align: center;
     z-index: 500;
+    font-size: 1.2em;
 }
 
 .textHeader {
@@ -22,8 +24,8 @@
 }
 
 .inputForm {
-    margin-top: -45px;
-    padding-top: 30px;
+    margin-top: 25px;
+    padding-top: 80px;
     padding-bottom: 30px;
     width: 80%;
     margin-left: auto;
@@ -32,20 +34,45 @@
     z-index: 1000;
     background-color: white;
     box-shadow: 0px 0px 15px rgb(78, 78, 78);
+    height: 150px;
+    transition: ease-out 0.2s;
 }
 
-#date {
+.inputForm:hover {
+    box-shadow: 0px 0px 20px rgb(53, 53, 53);
+}
+
+#label {
+    font-size: 16px;
+}
+
+#destination {
+    padding: 10px;
+    height: 22px;
+    font-size: 16px;
+}
+
+#date1 {
     margin-left: 40px;
+    height: 22px;
+    padding: 10px;
+    font-size: 16px;
 }
 
 #generate {
     margin-left: 30px;
+    size: 2em;
+    padding: 10px;
+    width: 115px;
+    font-size: 16px;
 }
 
 .mainContent {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.7s linear;
     width: 80%;
     height: auto;
-    min-height: 400px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
@@ -54,7 +81,7 @@
 }
 
 .mainCard {
-    height: 320px;
+    height: 130px;
     background-color: white;
     box-shadow: 0px 0px 15px rgb(78, 78, 78);
     transition: ease-out 0.2s;
@@ -67,10 +94,14 @@
 }
 
 .mainCardPhoto {
-    border: 1px solid green;
     width: 60%;
     text-align: center;
-    padding-top: 145px;
+    overflow: hidden;
+}
+
+#landscape {
+    max-width: 100%;
+    max-height: auto;
 }
 
 .flexPosition {
@@ -81,15 +112,29 @@
 }
 
 .mainCardText {
-    border: 1px solid rgb(34, 0, 128);
     padding: 0px;
     height: 35%;
     margin-bottom: 5px;
 }
 
+.destinationName {
+    height: 30%;
+    margin: 3px;
+}
+
+.destinationCountry {
+    height: 30%;
+    margin: 3px;
+    font-size: 25px;
+}
+
+.daysBefore {
+    height: 24%;
+    margin: 3px;
+}
+
 .mainCardTemp {
-    border: 1px solid rgb(182, 38, 2);
-    height: 47%;
+    height: 46%;
     margin-bottom: 5px;
 }
 
@@ -97,6 +142,10 @@
     border: 1px solid rgb(128, 126, 0);
     height: 9%;
     padding-top: 13px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: rgba(30, 30, 143, 0.801);
+    color: whitesmoke;
 }
 
 .allCards {
@@ -106,7 +155,6 @@
 
 .card {
     box-shadow: 0px 0px 15px rgb(78, 78, 78);
-    height: 400px;
     width: 30%;
     margin-top: 30px;
     margin-left: 2%;

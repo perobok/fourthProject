@@ -6,7 +6,7 @@
     <title>Travel app</title>
 </head>
 
-<body>
+<body onload="Client.mainApp()">
     <div class="container">
         <div class="header">
             <div class="textHeader">
@@ -15,22 +15,25 @@
         </div>
         <div class="inputForm">
             <form>
-                <label for="feelings">Enter your destination:</label>
-                <input type="text" id="destination" name="destination">
-                <input type="date" name="date" id="date1" value="2021-03-15">
+                <label for="label">Enter your destination:</label>
+                <input type="text" id="destination" name="destination" placeholder="e.g. Prague...">
+                <input type="date" name="date" id="date1" value="2021-03-17">
                 <button id="generate" type="submit"> Search </button>
             </form>
         </div>
         <div class="mainContent">
             <div class="mainCard">
 
-                <div class="mainCardPhoto">Here comes photo</div>
+                <div class="mainCardPhoto"><img id="landscape" src="" alt="landscape"></div>
                 <div class="flexPosition">
                     <div class="mainCardText">
-                        <h1>Country</h1>
-                        Your trip is in 5 days</div>
-                    <div class="mainCardTemp">17 stepeni</div>
-                    <div class="mainCardSave">SAVE TRIP</div>
+                        <div class="destinationName"></div>
+                        <div class="destinationCountry"></div>
+                        <div class="daysBefore"></div>
+                    </div>
+                    <div class="mainCardTemp"></div>
+                    <div class="mainCardIcon"></div>
+                    <div class="mainCardSave" id="saveAndRenderNewCard" onclick="return Client.postData2server(event)">SAVE TRIP</div>
                 </div>
 
             </div>
@@ -57,21 +60,25 @@
 
                 </div>
             </div>
+            <div>
+                <a href="https://pixabay.com/">
+                    <!--<img src="https://pixabay.com/static/img/public/medium_rectangle_a.png" alt="Pixabay">-->
+                </a>
+            </div>
         </div>
         <div class="footer">
             <div class="footerText">
                 Travel App&#169;</div>
         </div>
     </div>
-
     <script>
-        /*  // Check that service workers are supported
-                                                                                        if ('serviceWorker' in navigator) {
-                                                                                            // Use the window load event to keep the page load performant
-                                                                                            window.addEventListener('load', () => {
-                                                                                                navigator.serviceWorker.register('/service-worker.js');
-                                                                                            });
-                                                                                        }*/
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
     </script>
 </body>
 
