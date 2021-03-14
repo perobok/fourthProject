@@ -112,7 +112,8 @@
 }
 
 .mainCardText {
-    padding: 0px;
+    padding: 30px;
+    margin-top: 20px;
     height: 35%;
     margin-bottom: 5px;
 }
@@ -134,11 +135,13 @@
 }
 
 .mainCardTemp {
+    padding-top: 35px;
     height: 46%;
     margin-bottom: 5px;
 }
 
-.mainCardSave {
+
+/*.mainCardSave {
     border: 1px solid rgb(128, 126, 0);
     height: 9%;
     padding-top: 13px;
@@ -147,6 +150,7 @@
     background-color: rgba(30, 30, 143, 0.801);
     color: whitesmoke;
 }
+*/
 
 .allCards {
     display: flex;

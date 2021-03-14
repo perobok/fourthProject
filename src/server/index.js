@@ -20,8 +20,8 @@ app.use(bodyParser.json());
 
 console.log(__dirname)
 
-projectData = {};
-const data = [];
+//projectData = {};
+//const data = [];
 
 //GET   giving the keys to frontend
 app.get('/keys', function(req, res) {
@@ -38,7 +38,9 @@ app.post("/apiWeather", async function(req, res) {
     console.log(req.body.lng, req.body.lat);
     const apiWeatherURL = 'https://api.weatherbit.io/v2.0/forecast/daily';
     const apiWeatherKey = process.env.API_KEY_WEATHER;
-    const apiUrlWeather = `${apiWeatherURL}?lat=${req.body.lat}&lon=${req.body.lng}&key=${apiWeatherKey}`
+    //I saved api keys in enviroment file but for purpose of reviewing a directly inserted key in fetch.
+    //const apiUrlWeather = `${apiWeatherURL}?lat=${req.body.lat}&lon=${req.body.lng}&key=${apiWeatherKey}`
+    const apiUrlWeather = `${apiWeatherURL}?lat=${req.body.lat}&lon=${req.body.lng}&key=a37ee370636f4a9ea951b07969113c7e`
     let responseWeather = await fetch(apiUrlWeather)
     let dataWeather = await responseWeather.json()
     console.log(dataWeather)

@@ -1,10 +1,10 @@
 // Personal API Key for geoNames API
 const apiGeoURL = 'http://api.geonames.org/searchJSON';
-//const apiGeoUserName = 'perobok';
+const apiGeoUserName = 'perobok';
 
 // Personal API Key for WeatherBit API
 const apiPictureURL = 'https://pixabay.com/api/';
-//const apiPictureKey = '20614359-7c7fdf79fa0e5a77a9260f522';
+const apiPictureKey = '20614359-7c7fdf79fa0e5a77a9260f522';
 
 
 // Create a new date instance dynamically with JS 
@@ -76,11 +76,13 @@ async function geoData(e) {
 
 async function getPosition(destination) {
     // to get key from dotenv on server side
+    /*
     const responseKeyGeo = await fetch('http://localhost:8083/keys');
     const keyGeo = await responseKeyGeo.json();
     const apiGeoUserName = keyGeo.API_USERNAME_GEODATA;
     console.log(apiGeoUserName)
-        // to get Geo coordinates and country name data from API
+    */
+    // to get Geo coordinates and country name data from API
     const responseGeo = await fetch(`${apiGeoURL}?q=${destination}&username=${apiGeoUserName}`);
     const dataGeo = await responseGeo.json();
     console.log(dataGeo.geonames[0]);
@@ -122,39 +124,26 @@ async function getWeather(lat, lng, roundDays) {
 }
 
 async function getPic(destination, countryName) {
+    /* //----to get key from .env-----//
     const responseKeyPic = await fetch('http://localhost:8083/keys');
     const keyPic = await responseKeyPic.json();
     const apiPictureKey = keyPic.API_KEY_PIXABAY;
     console.log(apiPictureKey)
-
+*/
     const responsePic = await fetch(`https://cors-anywhere.herokuapp.com/${apiPictureURL}?key=${apiPictureKey}&q=${destination}`);
     const dataPic = await responsePic.json();
     console.log(dataPic);
     if (dataPic.totalHits !== 0) {
         const cityPicture = dataPic.hits[0].webformatURL;
         document.querySelector("#landscape").src = cityPicture;
-        const response = await fetch('http://localhost:8083/projectData', {
-            method: 'POST',
-            credentials: 'same-origin',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ cityPicture })
-        });
+
     } else {
         const responsePicCountry = await fetch(`https://cors-anywhere.herokuapp.com/${apiPictureURL}?key=${apiPictureKey}&q=${countryName}`);
         const dataPicCountry = await responsePicCountry.json();
         console.log(dataPicCountry);
         const countryPicture = dataPicCountry.hits[0].webformatURL;
         document.querySelector("#landscape").src = countryPicture;
-
-        const response = await fetch('http://localhost:8083/projectData', {
-            method: 'POST',
-            credentials: 'same-origin',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ countryPicture }),
-        });
     }
-    // adding event listener to the save button
-    // document.querySelector("#saveAndRenderNewCard").addEventListener('click', );
-    // Function to post data to server
 }
 export { mainApp }
+export { geoData }
