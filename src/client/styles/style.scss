@@ -1,200 +1,457 @@
-.container {
-    height: auto;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 2%;
-    background-color: whitesmoke;
-    overflow: hidden;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.header {
-    height: 180px;
-    border-radius: 2%;
-    background-color: rgb(30, 30, 143);
-    color: white;
-    text-align: center;
-    z-index: 500;
-    font-size: 1.2em;
-}
-
-.textHeader {
-    padding-top: 40px;
-}
-
-.inputForm {
-    margin-top: 25px;
-    padding-top: 80px;
-    padding-bottom: 30px;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    z-index: 1000;
-    background-color: white;
-    box-shadow: 0px 0px 15px rgb(78, 78, 78);
-    height: 150px;
-    transition: ease-out 0.2s;
-}
-
-.inputForm:hover {
-    box-shadow: 0px 0px 20px rgb(53, 53, 53);
-}
-
-#label {
-    font-size: 16px;
-}
-
-#destination {
-    padding: 10px;
-    height: 22px;
-    font-size: 16px;
-}
-
-#date1 {
-    margin-left: 40px;
-    height: 22px;
-    padding: 10px;
-    font-size: 16px;
-}
-
-#generate {
-    margin-left: 30px;
-    size: 2em;
-    padding: 10px;
-    width: 115px;
-    font-size: 16px;
-}
-
-.mainContent {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.7s linear;
-    width: 80%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    background-color: whitesmoke;
-}
-
-.mainCard {
-    height: 130px;
-    background-color: white;
-    box-shadow: 0px 0px 15px rgb(78, 78, 78);
-    transition: ease-out 0.2s;
-    display: flex;
-    flex-direction: horizontal;
-}
-
-.mainCard:hover {
-    box-shadow: 0px 0px 20px rgb(53, 53, 53);
-}
-
-.mainCardPhoto {
-    width: 60%;
-    text-align: center;
-    overflow: hidden;
-}
-
-#landscape {
-    max-width: 100%;
-    max-height: auto;
-}
-
-.flexPosition {
-    display: block;
-    width: 40%;
-    margin: 5px;
-    text-align: center;
-}
-
-.mainCardText {
-    padding: 30px;
-    margin-top: 20px;
-    height: 35%;
-    margin-bottom: 5px;
-}
-
-.destinationName {
-    height: 30%;
-    margin: 3px;
-}
-
-.destinationCountry {
-    height: 30%;
-    margin: 3px;
-    font-size: 25px;
-}
-
-.daysBefore {
-    height: 24%;
-    margin: 3px;
-}
-
-.mainCardTemp {
-    padding-top: 35px;
-    height: 46%;
-    margin-bottom: 5px;
-}
-
-
-/*.mainCardSave {
-    border: 1px solid rgb(128, 126, 0);
-    height: 9%;
-    padding-top: 13px;
-    margin-left: 20px;
-    margin-right: 20px;
-    background-color: rgba(30, 30, 143, 0.801);
-    color: whitesmoke;
-}
-*/
-
-.allCards {
-    display: flex;
-    flex-direction: horizontal;
-}
-
-.card {
-    box-shadow: 0px 0px 15px rgb(78, 78, 78);
-    width: 30%;
-    margin-top: 30px;
-    margin-left: 2%;
-    margin-right: 2%;
-    visibility: hidden;
-}
-
-.cardPhoto {
-    height: 30%;
-    border: 1px solid rgb(34, 0, 128);
-}
-
-.cardText {
-    height: 15%;
-    border: 1px solid rgb(0, 128, 85);
-}
-
-.cardTemp {
-    height: 40%;
-    border: 1px solid rgb(128, 9, 0);
-}
-
-.cardRemove {
-    height: 15%;
-    border: 1px solid rgb(128, 0, 122);
-}
-
-.footer {
-    background-color: rgb(30, 30, 143);
-    color: whitesmoke;
-    height: 80px;
-    z-index: 200;
-    overflow: hidden;
-}
-
-.footerText {
-    text-align: center;
-    margin-top: 30px;
-}
+    .container {
+        height: auto;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 2%;
+        background-color: whitesmoke;
+        overflow: hidden;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .header {
+        height: 180px;
+        border-radius: 2%;
+        background-color: rgb(30, 30, 143);
+        color: white;
+        text-align: center;
+        z-index: 500;
+        font-size: 1.2em;
+    }
+    
+    .textHeader {
+        padding-top: 40px;
+    }
+    
+    .inputForm {
+        margin-top: 25px;
+        padding-top: 80px;
+        padding-bottom: 30px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: 0px 0px 15px rgb(78, 78, 78);
+        height: 150px;
+        transition: ease-out 0.2s;
+    }
+    
+    .inputForm:hover {
+        box-shadow: 0px 0px 20px rgb(53, 53, 53);
+    }
+    
+    #label {
+        font-size: 16px;
+    }
+    
+    #destination {
+        padding: 10px;
+        height: 22px;
+        font-size: 16px;
+    }
+    
+    #date1 {
+        margin-left: 40px;
+        height: 22px;
+        padding: 10px;
+        font-size: 16px;
+    }
+    
+    #generate {
+        margin-left: 30px;
+        size: 2em;
+        padding: 10px;
+        width: 115px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    .mainContent {
+        width: 80%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        background-color: whitesmoke;
+    }
+    
+    .mainCard {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.7s linear;
+        height: px;
+        background-color: white;
+        box-shadow: 0px 0px 15px rgb(78, 78, 78);
+        transition: ease-out 0.2s;
+        display: flex;
+        flex-direction: horizontal;
+    }
+    
+    .mainCard:hover {
+        box-shadow: 0px 0px 20px rgb(53, 53, 53);
+    }
+    
+    .mainCardPhoto {
+        width: 60%;
+        text-align: center;
+        overflow: hidden;
+    }
+    
+    #landscape {
+        max-width: 100%;
+        max-height: auto;
+    }
+    
+    .flexPosition {
+        display: block;
+        width: 40%;
+        margin: 5px;
+        text-align: center;
+    }
+    
+    .mainCardText {
+        padding: 0px;
+        height: 35%;
+        margin-bottom: 5px;
+    }
+    
+    .destinationName {
+        height: 30%;
+        margin: 3px;
+    }
+    
+    .destinationCountry {
+        height: 30%;
+        margin: 3px;
+        font-size: 25px;
+    }
+    
+    .daysBefore {
+        height: 24%;
+        margin: 3px;
+    }
+    
+    .mainCardTemp {
+        height: 46%;
+        margin-bottom: 5px;
+    }
+    
+    .mainCardSave {
+        height: 9%;
+        padding-top: 13px;
+        margin-left: 20px;
+        margin-right: 20px;
+        background-color: rgb(41, 41, 138);
+        transition: ease-out 0.2s;
+        color: whitesmoke;
+    }
+    
+    .mainCardSave:hover {
+        background-color: rgb(30, 30, 143);
+        box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        cursor: pointer;
+    }
+    
+    .allCardsFirstRow {
+        height: 70px;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.7s linear;
+        display: flex;
+        flex-direction: horizontal;
+        margin-left: 0px;
+        margin-right: 0px;
+        justify-content: space-between;
+    }
+    
+    .allCardsSecondRow {
+        height: 0px;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.7s linear;
+        display: flex;
+        flex-direction: horizontal;
+        margin-left: 0px;
+        margin-right: 0px;
+        justify-content: space-between;
+    }
+    
+    .card {
+        width: 31%;
+        margin-top: 30px;
+        visibility: visible;
+        box-shadow: 0px 0px 15px rgb(78, 78, 78);
+    }
+    
+    .pic {
+        margin-bottom: 15px;
+    }
+    
+    .text {
+        margin-bottom: 15px;
+        padding: 7px;
+    }
+    
+    .temp {
+        margin-bottom: 15px;
+        padding: 7px;
+    }
+    
+    .rem {
+        padding: 7px;
+    }
+    
+    #landscapeCard0 {
+        max-width: 100%;
+        max-height: auto;
+        text-align: center;
+        overflow: hidden;
+    }
+    
+    #landscapeCard1 {
+        max-width: 100%;
+        max-height: auto;
+        text-align: center;
+        overflow: hidden;
+    }
+    
+    #landscapeCard2 {
+        max-width: 100%;
+        max-height: auto;
+        text-align: center;
+        overflow: hidden;
+    }
+    
+    #landscapeCard3 {
+        max-width: 100%;
+        max-height: auto;
+        text-align: center;
+        overflow: hidden;
+    }
+    
+    #landscapeCard4 {
+        max-width: 100%;
+        max-height: auto;
+        text-align: center;
+        overflow: hidden;
+    }
+    
+    #landscapeCard5 {
+        max-width: 100%;
+        max-height: auto;
+        text-align: center;
+        overflow: hidden;
+    }
+    
+    .cardPhoto {
+        height: 30%;
+        border: 1px solid rgb(34, 0, 128);
+    }
+    
+    .cardText {
+        height: 15%;
+        border: 1px solid rgb(0, 128, 85);
+    }
+    
+    .cardTemp {
+        height: 40%;
+        border: 1px solid rgb(128, 9, 0);
+    }
+    
+    .cardRemove {
+        height: 15%;
+        border: 1px solid rgb(128, 0, 122);
+    }
+    
+    .footer {
+        background-color: rgb(30, 30, 143);
+        color: whitesmoke;
+        height: 80px;
+        z-index: 200;
+        overflow: hidden;
+    }
+    
+    .footerText {
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .picturePixabay {
+        padding-bottom: 30px;
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    .picturePixabay img {
+        width: 5%;
+        height: auto;
+        margin-bottom: -20px;
+        margin-left: 20px;
+        transition: ease-out 0.2s;
+    }
+    
+    .picturePixabay img:hover {
+        box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+    }
+    /* MOBILE SCREAN*/
+    
+    @media (max-width: 600px) {
+        .header {
+            font-size: 1 em;
+        }
+        .textHeader {
+            padding-top: 10px;
+        }
+        .inputForm {
+            width: 90%;
+            padding-top: 20px;
+            padding-bottom: 15px;
+        }
+        #destination {
+            padding: 2px;
+            font-size: 16px;
+            margin: 3px;
+        }
+        #date1 {
+            margin-left: 0px;
+            padding: 2px;
+            font-size: 16px;
+            margin: 3px;
+        }
+        #label {
+            font-size: 16px;
+        }
+        #generate {
+            margin-left: 30px;
+            size: 1em;
+            padding: 3px;
+            width: 80px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .mainContent {
+            width: 90%;
+        }
+        .mainCard {
+            height: 0px;
+            display: block;
+        }
+        .mainCardPhoto {
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+        }
+        #landscape {
+            max-width: 100%;
+            max-height: auto;
+        }
+        .flexPosition {
+            display: block;
+            width: 100%;
+            margin: 5px;
+            text-align: center;
+        }
+        .mainCardText {
+            padding: 0px;
+            height: 35%;
+            margin-bottom: 5px;
+        }
+        .destinationName {
+            height: 30%;
+            margin: 3px;
+        }
+        .destinationCountry {
+            height: 30%;
+            margin: 3px;
+            font-size: 25px;
+        }
+        .daysBefore {
+            height: 24%;
+            margin: 3px;
+        }
+        .mainCardTemp {
+            height: 46%;
+            margin-bottom: 5px;
+        }
+        .mainCardSave {
+            height: 30px;
+            padding-top: 13px;
+            margin-top: 25px;
+            margin-left: 20px;
+            margin-right: 20px;
+            background-color: rgb(41, 41, 138);
+            color: whitesmoke;
+        }
+        .mainCardSave:hover {
+            background-color: rgb(30, 30, 143);
+            cursor: pointer;
+        }
+        .allCardsFirstRow {
+            display: block;
+            height: 0px;
+        }
+        .allCardsSecondRow {
+            display: block;
+        }
+        .card {
+            width: 95%;
+            margin-top: 30px;
+            visibility: visible;
+            box-shadow: 0px 0px 15px rgb(78, 78, 78);
+        }
+        .pic {
+            margin-bottom: 15px;
+        }
+        .text {
+            margin-bottom: 15px;
+            padding: 7px;
+        }
+        .temp {
+            margin-bottom: 15px;
+            padding: 7px;
+        }
+        .rem {
+            padding: 7px;
+        }
+        .cardPhoto {
+            height: 30%;
+            border: 1px solid rgb(34, 0, 128);
+        }
+        .cardText {
+            height: 15%;
+            border: 1px solid rgb(0, 128, 85);
+        }
+        .cardTemp {
+            height: 40%;
+            border: 1px solid rgb(128, 9, 0);
+        }
+        .cardRemove {
+            height: 15%;
+            border: 1px solid rgb(128, 0, 122);
+        }
+        .footer {
+            background-color: rgb(30, 30, 143);
+            color: whitesmoke;
+            height: 80px;
+            z-index: 200;
+            overflow: hidden;
+        }
+        .footerText {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .picturePixabay {
+            padding-bottom: 30px;
+            text-align: center;
+            text-decoration: none;
+        }
+        .picturePixabay img {
+            width: 15%;
+            height: auto;
+            margin-bottom: -10px;
+            margin-left: 20px;
+        }
+    }

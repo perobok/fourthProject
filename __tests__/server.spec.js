@@ -1,5 +1,10 @@
-import { keys } from '../src/server/index';
+import { app } from '../src/server/index'
 
-test('checking if the username is included', () => {
-    expect(keys('API_USERNAME_GEODATA')).not.toBe('');
+
+
+describe('app to be defined', () => {
+    test('ensure app exists', () => {
+        expect(app).toBeDefined();
+
+    });
 });

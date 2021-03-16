@@ -18,10 +18,8 @@ app.use(express.static('dist'))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-console.log(__dirname)
 
-//projectData = {};
-//const data = [];
+const data = [];
 
 //GET   giving the keys to frontend
 app.get('/keys', function(req, res) {
@@ -43,7 +41,6 @@ app.post("/apiWeather", async function(req, res) {
     const apiUrlWeather = `${apiWeatherURL}?lat=${req.body.lat}&lon=${req.body.lng}&key=a37ee370636f4a9ea951b07969113c7e`
     let responseWeather = await fetch(apiUrlWeather)
     let dataWeather = await responseWeather.json()
-    console.log(dataWeather)
     res.send(dataWeather)
 })
 
@@ -58,17 +55,24 @@ app.listen(8083, function() {
     console.log('Example app listening on port 8083!')
 })
 
-app.get('/api', function(req, res) {
-    res.send(mockAPIResponse)
+app.get('/projectData', function(req, res) {
+    console.log(data.length)
+    res.send(data)
 })
 
 // ROUTES FOR PUTTING DATA IN OBJECT IN SERVER
 
 //POST
 app.post('/projectData', (req, res) => {
-    projectData = req.body;
-    data.push(projectData);
+    addData(req, res);
+});
+
+function addData(req, res) {
+    const projectData = req.body;
+    data.unshift(projectData);
     console.log(projectData);
     console.log("I've got the request");
     res.send("message:Post received");
-});
+};
+
+module.exports = { app }

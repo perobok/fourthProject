@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel app</title>
 </head>
 
@@ -17,7 +18,7 @@
             <form>
                 <label for="label">Enter your destination:</label>
                 <input type="text" id="destination" name="destination" placeholder="e.g. Prague...">
-                <input type="date" name="date" id="date1" value="2021-03-17">
+                <input type="date" name="date" id="date1" value="2021-03-23">
                 <button id="generate" type="submit"> Search </button>
             </form>
         </div>
@@ -33,52 +34,79 @@
                     </div>
                     <div class="mainCardTemp"></div>
                     <div class="mainCardIcon"></div>
-                    <div class="mainCardSave" id="saveAndRenderNewCard" onclick="return Client.postData2server(event)"></div>
+                    <div class="mainCardSave" id="saveAndRenderNewCard">SAVE TRIP</div>
                 </div>
 
             </div>
-            <div class="allCards">
+            <div class="allCardsFirstRow">
+                <div class="card card0">
+                    <div class="pic cardPhoto0"><img id="landscapeCard0" src="" alt="Waithing to receive next destination..."></div>
+                    <div class="text cardText0"></div>
+                    <div class="temp cardTemp0"></div>
+                    <div class="rem cardRemove0"></div>
+
+                </div>
                 <div class="card card1">
-                    <div class="cardPhoto"></div>
-                    <div class="cardText"></div>
-                    <div class="cardTemp"></div>
-                    <div class="cardRemove"></div>
+                    <div class="pic cardPhoto1"><img id="landscapeCard1" src="" alt="waithing..."></div>
+                    <div class="text cardText1"></div>
+                    <div class="temp cardTemp1"></div>
+                    <div class="rem cardRemove1"></div>
 
                 </div>
                 <div class="card card2">
-                    <div class="cardPhoto"></div>
-                    <div class="cardText"></div>
-                    <div class="cardTemp"></div>
-                    <div class="cardRemove"></div>
-
+                    <div class="pic cardPhoto2"><img id="landscapeCard2" src="" alt="waithing..."></div>
+                    <div class="text cardText2"></div>
+                    <div class="temp cardTemp2"></div>
+                    <div class="rem cardRemove2"></div>
                 </div>
+            </div>
+            <div class="allCardsSecondRow">
                 <div class="card card3">
-                    <div class="cardPhoto"></div>
-                    <div class="cardText"></div>
-                    <div class="cardTemp"></div>
-                    <div class="cardRemove"></div>
+                    <div class="pic cardPhoto3"><img id="landscapeCard3" src="" alt="waithing..."></div>
+                    <div class="text cardText3"></div>
+                    <div class="temp cardTemp3"></div>
+                    <div class="rem cardRemove3"></div>
 
                 </div>
+                <div class="card card4">
+                    <div class="pic cardPhoto4"><img id="landscapeCard4" src="" alt="waithing..."></div>
+                    <div class="text cardText4"></div>
+                    <div class="temp cardTemp4"></div>
+                    <div class="rem cardRemove4"></div>
+
+                </div>
+                <div class="card card5">
+                    <div class="pic cardPhoto5"><img id="landscapeCard5" src="" alt="waithing..."></div>
+                    <div class="text cardText5"></div>
+                    <div class="temp cardTemp5"></div>
+                    <div class="rem cardRemove5"></div>
+                </div>
             </div>
-            <div>
-                <a href="https://pixabay.com/">
-                    <!--<img src="https://pixabay.com/static/img/public/medium_rectangle_a.png" alt="Pixabay">-->
-                </a>
-            </div>
+        </div>
+        <div>
+
+        </div>
+        <div class="picturePixabay">
+            <a href="https://pixabay.com/">Pictures provided by: 
+                <img src="https://pixabay.com/static/img/public/medium_rectangle_a.png" alt="Pixabay">
+            </a>
         </div>
         <div class="footer">
             <div class="footerText">
                 Travel App&#169;</div>
+
         </div>
     </div>
+    </div>
+
     <script>
-        // Check that service workers are supported
-        if ('serviceWorker' in navigator) {
-            // Use the window load event to keep the page load performant
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js');
-            });
-        }
+        // // Check that service workers are supported
+        // if ('serviceWorker' in navigator) {
+        //     // Use the window load event to keep the page load performant
+        //     window.addEventListener('load', () => {
+        //         navigator.serviceWorker.register('/service-worker.js');
+        //     });
+        // }
     </script>
 </body>
 
