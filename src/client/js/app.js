@@ -233,6 +233,5 @@ const updateUI = async() => {
     }
 }
 
-
 export { mainApp }
 export { geoData }
