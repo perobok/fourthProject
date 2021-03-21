@@ -159,6 +159,8 @@ function getWeather(lat, lng, roundDays) {
         })
 }
 
+
+
 async function getPic(destination, countryName) {
 
     const responsePic = await fetch(`https://cors-anywhere.herokuapp.com/${apiPictureURL}?key=${apiPictureKey}&q=${destination}`);
